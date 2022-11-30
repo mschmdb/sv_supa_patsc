@@ -14,7 +14,7 @@ async function getData(countryname) {
   return data
 }
 </script>
-<h1>Kuck mal Arne, alle Daten mit Svelte aus Supabase (Postgres) gezogen. Yay.</h1>
+<h1>Patscen Test Data Live from Postgres</h1>
 <form on:submit={getData}>
     <input type="text" bind:value={countryname}><input type="submit">
 </form>
