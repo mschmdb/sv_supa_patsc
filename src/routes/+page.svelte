@@ -14,9 +14,11 @@ async function getData(countryname) {
   return data
 }
 </script>
-<h1>Patscen Test Data Live from Postgres</h1>
+<div class="container mx-auto">
+<h1 class="text-2xl">Patscen Test Data Live from Postgres</h1>
 <form on:submit={getData}>
-    <input type="text" bind:value={countryname}><input type="submit">
+    <input class="border-2 border-rose-600 rounded" type="text" bind:value={countryname}>
+    <!-- <input class="border-2 border-rose-600 rounded" type="submit"> -->
 </form>
 <!-- {countryname} -->
 {#await getData(countryname)}
@@ -29,3 +31,4 @@ async function getData(countryname) {
   <p>Something went wrong while fetching the data:</p>
   <pre>{error}</pre>
 {/await}
+</div>
