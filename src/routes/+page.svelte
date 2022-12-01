@@ -17,7 +17,7 @@ async function getData(countryname) {
 <div class="container mx-auto">
 <h1 class="text-2xl">Patscen Test Data Live from Postgres</h1>
 <form on:submit={getData}>
-    <input class="border-2 border-rose-600 rounded" type="text" bind:value={countryname}>
+    <input autofocus placeholder="Enter a Country Name" class="border-2 border-rose-600 rounded" type="text" bind:value={countryname}>
     <!-- <input class="border-2 border-rose-600 rounded" type="submit"> -->
 </form>
 <!-- {countryname} -->
@@ -25,7 +25,7 @@ async function getData(countryname) {
   <p>Fetching data...</p>
 {:then data}
   {#each data as Pats }
-    <li>{Pats.Country} - {Pats.Filing_Fee}{Pats.Currency}</li>
+    <li>{Pats.Country} - {Pats.Filing_Fee} {Pats.Currency}</li>
   {/each}
 {:catch error}
   <p>Something went wrong while fetching the data:</p>
