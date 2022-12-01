@@ -1,9 +1,14 @@
 <script>
 
 import supabase from '$lib/db'
-	import { get } from 'svelte/store';
+// import { get } from 'svelte/store';
 let countryname
+
 async function getData(countryname) {
+    if (!countryname || countryname.length < 2) {
+        
+        return ""
+    } else {
 
   const { data, error } = await supabase
     .from('patscen')
@@ -12,12 +17,13 @@ async function getData(countryname) {
   if (error) throw new Error(error.message)
   
   return data
+    }
 }
 </script>
 <div class="container m-8">
 <h1 class="text-2xl">Patscen Test Data Live from Postgres</h1>
-<form on:submit={getData}>
-    <input autofocus placeholder="Enter a Country Name" class="border-2 border-rose-600 rounded" type="text" bind:value={countryname}>
+<form on:submit|preventDefault={getData}>
+    <input placeholder="Enter a Country Name" class="border-2 border-rose-600 rounded" type="text" bind:value={countryname}>
     <!-- <input class="border-2 border-rose-600 rounded" type="submit"> -->
 </form>
 <!-- {countryname} -->
