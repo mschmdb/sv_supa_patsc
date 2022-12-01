@@ -14,7 +14,7 @@ async function getData(countryname) {
   return data
 }
 </script>
-<div class="container mx-auto">
+<div class="container m-8">
 <h1 class="text-2xl">Patscen Test Data Live from Postgres</h1>
 <form on:submit={getData}>
     <input autofocus placeholder="Enter a Country Name" class="border-2 border-rose-600 rounded" type="text" bind:value={countryname}>
