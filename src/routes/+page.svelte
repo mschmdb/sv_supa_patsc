@@ -1,5 +1,5 @@
 <script>
-
+import Nav from '../components/nav.svelte';
 import supabase from '$lib/db'
 // import { get } from 'svelte/store';
 let countryname
@@ -20,6 +20,8 @@ async function getData(countryname) {
     }
 }
 </script>
+<Nav>
+</Nav>
 <div class="container m-8">
 <h1 class="text-2xl">Patscen client side loaded Live from Postgres</h1>
 <p class="my-8"><a href="ssr" class="underline">hop over to server side loaded data</a></p>

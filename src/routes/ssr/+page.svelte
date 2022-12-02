@@ -1,5 +1,5 @@
 <script>
-
+import Nav from '../../components/nav.svelte';
 export let data
 const values = Object.values(data);
 
@@ -19,7 +19,8 @@ function getFilteredCountries(countries, stringToMatch){
 
 </script>
 
-
+<Nav>
+</Nav>
 <div class="container m-8">
 <h1 class="text-2xl">Patscen server side loaded Live from Postgres</h1>
 
