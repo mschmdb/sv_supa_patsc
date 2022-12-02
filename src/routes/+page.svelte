@@ -23,7 +23,8 @@ async function getData(countryname) {
 <div class="container m-8">
 <h1 class="text-2xl">Patscen Test Data Live from Postgres</h1>
 <form on:submit|preventDefault={getData}>
-    <input placeholder="Enter a Country Name" class="border-2 border-rose-600 rounded" type="text" bind:value={countryname}>
+    <input placeholder="Enter a Country Name"
+     class="border-2 border-rose-600 rounded" type="text" bind:value={countryname}>
     <!-- <input class="border-2 border-rose-600 rounded" type="submit"> -->
 </form>
 <!-- {countryname} -->
