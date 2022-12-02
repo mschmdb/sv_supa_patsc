@@ -13,15 +13,15 @@
   console.log(JSON.stringify(data))
   const marginTop = 20; // top margin, in pixels
   const marginRight = 0; // right margin, in pixels
-  const marginBottom = 30; // bottom margin, in pixels
+  const marginBottom = 20; // bottom margin, in pixels
   const marginLeft = 50; // left margin, in pixels
-  const width = 800; // width of the chart, in pixels
-  const height = 300; // height of the chart, in pixels
+  const width = 900; // width of the chart, in pixels
+  const height = 500; // height of the chart, in pixels
   const xPadding = 0.2; // padding between bars
   const yFormat = '$'; // unit to display on y-axis ticks
   const yLabel = '↑ Filing Fee'; // label for the y-axis
   const color = 'steelblue'; // bar fill color
-  const yScalefactor = 6; // number of ticks on y-yaxis
+  const yScalefactor = 10; // number of ticks on y-yaxis
 
   // Sort data by default, ascending, or descending
   let sortedData = values;
@@ -70,7 +70,7 @@
     </select>
   </div>
 
-  <svg {width} {height} viewBox="0 0 {width} {height}">
+  <svg {width} {height} viewBox="0 0 {width} 700">
     <g class="x-axis" transform="translate(0,{height - marginBottom})">
       <path class="domain" stroke="black" d="M{marginLeft}, 0.5 H{width}" />
       {#each reactiveXVals as xVal, i}
@@ -79,9 +79,9 @@
             x1={reactiveXScale.bandwidth() / 2}
             x2={reactiveXScale.bandwidth() / 2}
             stroke="black"
-            y2="6"
+            y2="0"
           />
-          <text y={marginBottom} dx={reactiveXScale.bandwidth() / 4}>{xVal}</text>
+          <text class="rotate-45" y={marginBottom} dx={reactiveXScale.bandwidth() / 4}>{xVal}</text>
         </g>
       {/each}
     </g>
@@ -144,10 +144,12 @@
     font-size: "10px";
     font-family: sans-serif;
     text-anchor: "end";
+    color: black;
   }
 
   .tick {
     opacity: 1;
+    color: black;
   }
 
   .tick-start {
