@@ -6,8 +6,7 @@ export const load = async function getData() {
 
   const { data, error } = await supabase
     .from('patscen')
-    .select("Country, Filing_Fee")
-    .limit(13)
+    .select()
   if (error) throw new Error(error.message)
   
   return data

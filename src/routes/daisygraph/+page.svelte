@@ -1,0 +1,66 @@
+<script>
+import Nav from '../../components/nav.svelte';
+export let data
+const values = Object.values(data);
+
+let countryname = ''
+let stringToMatch2 = '';
+let filing_fees = values
+filing_fees.sort((a,b) => b.Filing_Fee - a.Filing_Fee);
+$: b = 27
+
+function getFilteredCountries(filing_fees, b){
+    if(b){
+        // console.log("test1:")
+        return filing_fees.filter(filing_fee => {
+            
+            return filing_fee.Filing_Fee < b
+            
+        });
+    } else {
+        // console.log("test2:")
+        return filing_fee
+        
+
+    }
+}
+</script>
+
+<Nav>
+</Nav>
+<div class="container m-8 w-10/12">
+<h1 class="text-2xl">Patscen server side loaded Live from Postgres</h1>
+
+<form>
+
+    <input type="range" min="27" max="9000" class="range" bind:value={b} />
+
+</form>
+
+{b}
+<div class="overflow-x-auto">
+    <table class="table-compact">
+      <!-- head -->
+      <thead>
+        <tr>
+         
+          <th class="w-1/2">Country</th>
+          <th class="w-1/2">Filing Fee</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- row 1 -->
+        
+            {#each getFilteredCountries(filing_fees, b) as values }
+            
+            <tr>
+                <td class="w-1/2">{ values.Country } { Math.round(values.Filing_Fee) }</td>
+                <td class="w-1/2"><progress class="progress w-56" value={ Math.round(values.Filing_Fee) } max="2000"></progress></td>
+            </tr>
+            {/each}
+         
+        <!-- row 2 -->
+      </tbody>
+    </table>
+  </div>
+</div>

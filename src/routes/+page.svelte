@@ -23,8 +23,9 @@ async function getData(countryname) {
 <Nav>
 </Nav>
 <div class="container m-8">
+
 <h1 class="text-2xl">Patscen client side loaded Live from Postgres</h1>
-<p class="my-8"><a href="ssr" class="underline">hop over to server side loaded data</a></p>
+
 <form on:submit|preventDefault={getData}>
     <input placeholder="Enter a Country Name"
      class="input input-bordered w-full max-w-xs m-8" type="text" bind:value={countryname}>
