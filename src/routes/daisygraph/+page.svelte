@@ -39,12 +39,12 @@ function getFilteredCountries(filing_fees, b){
 
 {b}
 <div class="overflow-x-auto">
-    <table class="table-compact">
+    <table class="table table-zebra w-full">
       <!-- head -->
       <thead>
         <tr>
          
-          <th class="w-1/2">Country</th>
+          <th class="w-96">Country</th>
           <th class="w-1/2">Filing Fee</th>
         </tr>
       </thead>
@@ -54,7 +54,7 @@ function getFilteredCountries(filing_fees, b){
             {#each getFilteredCountries(filing_fees, b) as values }
             
             <tr>
-                <td class="w-1/2">{ values.Country } { Math.round(values.Filing_Fee) }</td>
+                <td class="w-1/2 whitespace-normal">{ values.Country } { Math.round(values.Filing_Fee) }</td>
                 <td class="w-1/2"><progress class="progress w-56" value={ Math.round(values.Filing_Fee) } max="2000"></progress></td>
             </tr>
             {/each}
