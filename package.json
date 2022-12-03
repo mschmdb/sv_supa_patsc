@@ -32,6 +32,7 @@
 	"type": "module",
 	"dependencies": {
 		"d3": "^7.6.1",
+		"daisyui": "^2.42.1",
 		"topojson-client": "^3.1.0"
 	}
 }
