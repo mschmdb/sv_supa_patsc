@@ -27,7 +27,7 @@ async function getData(countryname) {
 <p class="my-8"><a href="ssr" class="underline">hop over to server side loaded data</a></p>
 <form on:submit|preventDefault={getData}>
     <input placeholder="Enter a Country Name"
-     class="border-2 border-rose-600 rounded" type="text" bind:value={countryname}>
+     class="input input-bordered w-full max-w-xs m-8" type="text" bind:value={countryname}>
     <!-- <input class="border-2 border-rose-600 rounded" type="submit"> -->
 </form>
 <!-- {countryname} -->
