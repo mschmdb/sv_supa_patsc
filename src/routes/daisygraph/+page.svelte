@@ -1,5 +1,6 @@
 <script>
 import Nav from '../../components/nav.svelte';
+import { ProgressBar } from '@skeletonlabs/skeleton';
 export let data
 const values = Object.values(data);
 
@@ -54,8 +55,8 @@ function getFilteredCountries(filing_fees, b){
             {#each getFilteredCountries(filing_fees, b) as values }
             
             <tr>
-                <td class="w-1/2 whitespace-normal">{ values.Country } { Math.round(values.Filing_Fee) }</td>
-                <td class="w-1/2"><progress class="progress w-56" value={ Math.round(values.Filing_Fee) } max="2000"></progress></td>
+                <td class="w-1/2 whitespace-normal">{ values.Country }</td>
+                <td class="w-1/2"><ProgressBar rounded="rounded-full" track="bg-primary-500-30-token" label="{ values.Currency } {values.Filing_Fee}" value={ Math.round(values.Filing_Fee) } max="2000"></ProgressBar></td>
             </tr>
             {/each}
          

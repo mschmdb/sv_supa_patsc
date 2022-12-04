@@ -28,7 +28,12 @@ async function getData(countryname) {
 
 <form on:submit|preventDefault={getData}>
     <input placeholder="Enter a Country Name"
-     class="input input-bordered w-full max-w-xs m-8" type="text" bind:value={countryname}>
+    class="
+    block
+    rounded-md
+    border-gray-300
+    m-8
+    shadow-sm" type="text" bind:value={countryname}>
     <!-- <input class="border-2 border-rose-600 rounded" type="submit"> -->
 </form>
 <!-- {countryname} -->

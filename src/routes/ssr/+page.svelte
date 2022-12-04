@@ -26,7 +26,12 @@ function getFilteredCountries(countries, stringToMatch){
 
 <form>
     <input placeholder="Enter a Country Name"
-    class="input input-bordered w-full max-w-xs m-8" type="text" bind:value={stringToMatch}>
+    class="
+    block
+    rounded-md
+    border-gray-300
+    m-8
+    shadow-sm" type="text" bind:value={stringToMatch}>
 </form>
 {#each getFilteredCountries(countries, stringToMatch) as value }
 
