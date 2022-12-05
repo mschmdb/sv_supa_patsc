@@ -31,6 +31,9 @@ import Nav from '../../components/nav.svelte';
 		tableA11y
 	} from '$lib/utilities/DataTable/DataTable';
 	import CodeBlock from '$lib/utilities/CodeBlock/CodeBlock.svelte';
+    
+
+   
 
 
     function addSum() {
@@ -52,7 +55,7 @@ import Nav from '../../components/nav.svelte';
 		selection: [],
 		search: '',
 		sort: '',
-		pagination: { offset: 0, limit: 5, size: 0, amounts: [1, 2, 5, 10] }
+		pagination: { offset: 0, limit: 10, size: 0, amounts: [1, 2, 5, 10] }
 	});
 	dataTableModel.subscribe((v) => dataTableHandler(v));
 
@@ -80,39 +83,51 @@ import Nav from '../../components/nav.svelte';
                     <th>Year 5</th>
                     <th>Year 6</th>
                     <th>Year 7</th>
-                    <th>Sum</th>
+                    <th>Year 8</th>
+                    <th>Year 9</th>
+                    <th>Year 10</th>
+                    <th data-sort="Sum">Sum</th>
                     
                 </tr>
             </thead>
             <tbody>
                 {#each $dataTableModel.filtered as row, rowIndex}
                     <tr class:table-row-checked={row.dataTableChecked} aria-rowindex={rowIndex + 1}>
-                        <td role="gridcell" aria-colindex={2} tabindex="0">
+                        <td role="gridcell" aria-colindex={1} tabindex="0">
                             <em class="opacity-50">{row.Country}</em>
                         </td>
-                        <td role="gridcell" aria-colindex={3} tabindex="0">
+                        <td role="gridcell" aria-colindex={2} tabindex="0">
                             {row.year_1}&nbsp;{row.Currency}
                         </td>
-                        <td role="gridcell" aria-colindex={4} tabindex="0" class="md:!whitespace-normal capitalize">
+                        <td role="gridcell" aria-colindex={3} tabindex="0" class="md:!whitespace-normal capitalize">
                             {row.year_2}&nbsp;{row.Currency}
                         </td>
                         <td role="gridcell" aria-colindex={4} tabindex="0" class="md:!whitespace-normal capitalize">
                             {row.year_3}&nbsp;{row.Currency}
                         </td>
-                        <td role="gridcell" aria-colindex={4} tabindex="0" class="md:!whitespace-normal capitalize">
+                        <td role="gridcell" aria-colindex={5} tabindex="0" class="md:!whitespace-normal capitalize">
                             {row.year_4}&nbsp;{row.Currency}
                         </td>
-                        <td role="gridcell" aria-colindex={4} tabindex="0" class="md:!whitespace-normal capitalize">
+                        <td role="gridcell" aria-colindex={6} tabindex="0" class="md:!whitespace-normal capitalize">
                             {row.year_5}&nbsp;{row.Currency}
                         </td>
-                        <td role="gridcell" aria-colindex={4} tabindex="0" class="md:!whitespace-normal capitalize">
+                        <td role="gridcell" aria-colindex={7} tabindex="0" class="md:!whitespace-normal capitalize">
                             {row.year_6}&nbsp;{row.Currency}
                         </td>
-                        <td role="gridcell" aria-colindex={4} tabindex="0" class="md:!whitespace-normal capitalize">
+                        <td role="gridcell" aria-colindex={8} tabindex="0" class="md:!whitespace-normal capitalize">
                             {row.year_7}&nbsp;{row.Currency}
                         </td>
-                        <td role="gridcell" aria-colindex={4} tabindex="0" class="md:!whitespace-normal">
-                            {addSum(row.year_1, row.year_2, row.year_3, row.year_4, row.year_5, row.year_6, row.year_7 )}
+                        <td role="gridcell" aria-colindex={9} tabindex="0" class="md:!whitespace-normal capitalize">
+                            {row.year_8}&nbsp;{row.Currency}
+                        </td>
+                        <td role="gridcell" aria-colindex={10} tabindex="0" class="md:!whitespace-normal capitalize">
+                            {row.year_9}&nbsp;{row.Currency}
+                        </td>
+                        <td role="gridcell" aria-colindex={11} tabindex="0" class="md:!whitespace-normal capitalize">
+                            {row.year_10}&nbsp;{row.Currency}
+                        </td>
+                        <td role="gridcell" aria-colindex={12} tabindex="0" class="md:!whitespace-normal">
+                            {addSum(row.year_1, row.year_2, row.year_3, row.year_4, row.year_5, row.year_6, row.year_7, row.year_8, row.year_9, row.year_10 )}
                             &nbsp;{row.Currency}
                         </td>
                         
