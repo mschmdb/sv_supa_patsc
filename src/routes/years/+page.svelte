@@ -32,6 +32,18 @@ import Nav from '../../components/nav.svelte';
 	} from '$lib/utilities/DataTable/DataTable';
 	import CodeBlock from '$lib/utilities/CodeBlock/CodeBlock.svelte';
 
+
+    function addSum() {
+    let sum = 0;
+    for (let i = 0; i < arguments.length; i++) {
+        if (arguments[i] === null) {
+        sum += 0;
+        } else {
+        sum += parseInt(arguments[i], 10);
+        }
+    }
+    return sum;
+    }
 	
 	// Store
 	const dataTableModel: Writable<DataTableModel> = writable({
@@ -99,14 +111,9 @@ import Nav from '../../components/nav.svelte';
                         <td role="gridcell" aria-colindex={4} tabindex="0" class="md:!whitespace-normal capitalize">
                             {row.year_7}&nbsp;{row.Currency}
                         </td>
-                        <td role="gridcell" aria-colindex={4} tabindex="0" class="md:!whitespace-normal capitalize">
-                            {parseFloat(row.year_7? row.year_7 : 0)
-                            +parseFloat(row.year_6? row.year_6 : 0)
-                            +parseFloat(row.year_5? row.year_5 : 0)
-                            +parseFloat(row.year_4? row.year_4 : 0)
-                            +parseFloat(row.year_3? row.year_3 : 0)
-                            +parseFloat(row.year_2? row.year_2 : 0)
-                            +parseFloat(row.year_1? row.year_1 : 0)}&nbsp;{row.Currency}
+                        <td role="gridcell" aria-colindex={4} tabindex="0" class="md:!whitespace-normal">
+                            {addSum(row.year_1, row.year_2, row.year_3, row.year_4, row.year_5, row.year_6, row.year_7 )}
+                            &nbsp;{row.Currency}
                         </td>
                         
                     </tr>

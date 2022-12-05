@@ -8,6 +8,6 @@ export const load = async function getData() {
     .from('patscen')
     .select()
   if (error) throw new Error(error.message)
-  console.log(data)
+  // console.log(data)
   return data
     }
