@@ -59,29 +59,55 @@ import Nav from '../../components/nav.svelte';
         <table class="table table-hover" role="grid" use:tableInteraction use:tableA11y>
             <thead on:click={(e) => { dataTableSort(e, dataTableModel) }} on:keypress>
                 <tr>
-                    <th><input type="checkbox" on:click={(e) => { dataTableSelectAll(e, dataTableModel) }} /></th>
+                    
                     <th data-sort="Country">Country</th>
-                    <th data-sort="Claim_Fee">Claim Fee</th>
-                    <th data-sort="Filing_Fee">Filing Fee</th>
+                    <th>Year 1</th>
+                    <th>Year 2</th>
+                    <th>Year 3</th>
+                    <th>Year 4</th>
+                    <th>Year 5</th>
+                    <th>Year 6</th>
+                    <th>Year 7</th>
+                    <th>Sum</th>
                     
                 </tr>
             </thead>
             <tbody>
                 {#each $dataTableModel.filtered as row, rowIndex}
                     <tr class:table-row-checked={row.dataTableChecked} aria-rowindex={rowIndex + 1}>
-                        <td role="gridcell" aria-colindex={1} tabindex="0">
-                            <input type="checkbox" bind:checked={row.dataTableChecked} />
-                        </td>
                         <td role="gridcell" aria-colindex={2} tabindex="0">
                             <em class="opacity-50">{row.Country}</em>
                         </td>
                         <td role="gridcell" aria-colindex={3} tabindex="0">
-                            {row.Claim_Fee}&nbsp;{row.Currency}
+                            {row.year_1}&nbsp;{row.Currency}
                         </td>
                         <td role="gridcell" aria-colindex={4} tabindex="0" class="md:!whitespace-normal capitalize">
-                            {row.Filing_Fee}&nbsp;{row.Currency}
+                            {row.year_2}&nbsp;{row.Currency}
                         </td>
-                        
+                        <td role="gridcell" aria-colindex={4} tabindex="0" class="md:!whitespace-normal capitalize">
+                            {row.year_3}&nbsp;{row.Currency}
+                        </td>
+                        <td role="gridcell" aria-colindex={4} tabindex="0" class="md:!whitespace-normal capitalize">
+                            {row.year_4}&nbsp;{row.Currency}
+                        </td>
+                        <td role="gridcell" aria-colindex={4} tabindex="0" class="md:!whitespace-normal capitalize">
+                            {row.year_5}&nbsp;{row.Currency}
+                        </td>
+                        <td role="gridcell" aria-colindex={4} tabindex="0" class="md:!whitespace-normal capitalize">
+                            {row.year_6}&nbsp;{row.Currency}
+                        </td>
+                        <td role="gridcell" aria-colindex={4} tabindex="0" class="md:!whitespace-normal capitalize">
+                            {row.year_7}&nbsp;{row.Currency}
+                        </td>
+                        <td role="gridcell" aria-colindex={4} tabindex="0" class="md:!whitespace-normal capitalize">
+                            {parseFloat(row.year_7? row.year_7 : 0)
+                            +parseFloat(row.year_6? row.year_6 : 0)
+                            +parseFloat(row.year_5? row.year_5 : 0)
+                            +parseFloat(row.year_4? row.year_4 : 0)
+                            +parseFloat(row.year_3? row.year_3 : 0)
+                            +parseFloat(row.year_2? row.year_2 : 0)
+                            +parseFloat(row.year_1? row.year_1 : 0)}&nbsp;{row.Currency}
+                        </td>
                         
                     </tr>
                 {/each}

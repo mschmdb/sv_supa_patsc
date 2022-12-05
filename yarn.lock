@@ -137,6 +137,13 @@
     "tiny-glob" "^0.2.9"
     "undici" "5.12.0"
 
+"@sveltejs/pancake@^0.0.18":
+  "integrity" "sha512-vnpKn+sHE0yvw/6x4juF9EoDS8iYC5JNIVtRgclA37rfxdnIpvbVxStiZ5/gWncjERN4jtSpTAplS1zCARCBXA=="
+  "resolved" "https://registry.npmjs.org/@sveltejs/pancake/-/pancake-0.0.18.tgz"
+  "version" "0.0.18"
+  dependencies:
+    "yootils" "0.0.16"
+
 "@sveltejs/vite-plugin-svelte@^1.1.0":
   "integrity" "sha512-DZtl1qFT+re4HwEP8PjVZNIP7NO3Ua/akYpPteTXOT57PQNTXBK8pIAv4WwhQXMWIa8JcMNOnML95FR/Mhb3gw=="
   "resolved" "https://registry.npmjs.org/@sveltejs/vite-plugin-svelte/-/vite-plugin-svelte-1.3.0.tgz"
@@ -500,7 +507,7 @@
     "d3-color" "1 - 3"
     "d3-interpolate" "1 - 3"
 
-"d3-scale@4":
+"d3-scale@^4.0.2", "d3-scale@4":
   "integrity" "sha512-GZW464g1SH7ag3Y7hXjf8RoUuAFIqklOAq3MRl4OaWabTFJY9PN/E1YklhXLh+OQ3fM9yS2nOkCoS+WLZ6kvxQ=="
   "resolved" "https://registry.npmjs.org/d3-scale/-/d3-scale-4.0.2.tgz"
   "version" "4.0.2"
@@ -912,6 +919,13 @@
   "integrity" "sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ=="
   "resolved" "https://registry.npmjs.org/kleur/-/kleur-4.1.5.tgz"
   "version" "4.1.5"
+
+"layercake@^7.1.0":
+  "integrity" "sha512-DV6FsmG0c5a2UyB15QBKBhgxhUW7E1615UTiTQGs2cnfSHPdgo8PfhAdX/E6AZwYhN9oLECpINBhEg3WNlIKjw=="
+  "resolved" "https://registry.npmjs.org/layercake/-/layercake-7.1.0.tgz"
+  "version" "7.1.0"
+  dependencies:
+    "d3-scale" "^4.0.2"
 
 "lilconfig@^2.0.5", "lilconfig@^2.0.6":
   "integrity" "sha512-9JROoBW7pobfsx+Sq2JsASvCo6Pfo6WWoUW79HuB1BCoBXD4PLWJPqDF6fNj67pqBYTbAHkE57M1kS/+L1neOg=="
@@ -1515,3 +1529,8 @@
   "integrity" "sha512-AacA8nRULjKMX2DvWvOAdBZMOfQlypSFkjcOcu9FalllIDJ1kvlREzcdIZmidQUqqeMv7jorHjq2HlLv/+c2lg=="
   "resolved" "https://registry.npmjs.org/yaml/-/yaml-2.1.3.tgz"
   "version" "2.1.3"
+
+"yootils@0.0.16":
+  "integrity" "sha512-aIVecm5ucOzwhtKbl0zkfg0ZSOUR9c2da0k8cIc9umjjzkvVCWUUX/UHZ1CLPsv4wmJLqt0aWeLB7p9n9JDwYQ=="
+  "resolved" "https://registry.npmjs.org/yootils/-/yootils-0.0.16.tgz"
+  "version" "0.0.16"

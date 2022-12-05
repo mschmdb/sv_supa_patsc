@@ -4,7 +4,7 @@
     &nbsp;|&nbsp
     <a href="/ssr" data-sveltekit-prefetch class="underline">server side</a>
     &nbsp;|&nbsp
-    <a href="/map" class="underline" data-sveltekit-prefetch>graph with D9</a>
+    <a href="/map" class="underline" data-sveltekit-prefetch>graph with D3</a>
     &nbsp;|&nbsp
     <a href="/daisygraph" class="underline" data-sveltekit-prefetch>range</a>
     &nbsp;|&nbsp
