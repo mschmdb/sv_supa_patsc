@@ -9,5 +9,7 @@
     <a href="/daisygraph" class="underline" data-sveltekit-prefetch>range</a>
     &nbsp;|&nbsp
     <a href="/datatable" class="underline" data-sveltekit-prefetch>datatable</a>
+    &nbsp;|&nbsp
+    <a href="/years" class="underline" data-sveltekit-prefetch>yearly sum</a>
 </div>
 </nav>
