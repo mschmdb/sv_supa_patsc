@@ -31,7 +31,7 @@ function getFilteredCountries(countries, stringToMatch){
     rounded-md
     border-gray-300
     m-8
-    shadow-sm" type="text" bind:value={stringToMatch}>
+    shadow-sm w-80" type="text" bind:value={stringToMatch}>
 </form>
 {#each getFilteredCountries(countries, stringToMatch) as value }
 

@@ -7,7 +7,13 @@ const config = {
 	
 
 	theme: {
-		extend: {}
+		extend: {
+			
+				colors: {
+				  'mtc': '#890c58',
+			
+			},
+		}
 	},
 
 	plugins: [

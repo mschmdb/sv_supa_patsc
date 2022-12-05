@@ -1,7 +1,14 @@
-<script>
+<script lang=ts>
 import Nav from '../components/nav.svelte';
 import supabase from '$lib/db'
-// import { get } from 'svelte/store';
+// import { writable, type Writable } from 'svelte/store';
+import { AppRail } from '@skeletonlabs/skeleton';
+import { AppRailTile } from '@skeletonlabs/skeleton';
+
+import { writable, type Writable } from 'svelte/store';
+
+const storeValue: Writable<number> = writable(1);
+
 let countryname
 
 async function getData(countryname) {
@@ -22,6 +29,14 @@ async function getData(countryname) {
 </script>
 <Nav>
 </Nav>
+<!-- <AppRail selected={storeValue}>
+  <svelte:fragment slot="lead">Patscen</svelte:fragment>
+  
+    <AppRailTile label="CSR" title="Tile" value={1}>(icon)</AppRailTile>
+    <AppRailTile label="Tile" title="Tile" value={1}>(icon)</AppRailTile>
+
+  <svelte:fragment slot="trail">(trail)</svelte:fragment>
+</AppRail> -->
 <div class="container m-8">
 
 <h1 class="text-2xl">Patscen client side loaded Live from Postgres</h1>
@@ -33,7 +48,7 @@ async function getData(countryname) {
     rounded-md
     border-gray-300
     m-8
-    shadow-sm" type="text" bind:value={countryname}>
+    shadow-sm w-80" type="text" bind:value={countryname}>
     <!-- <input class="border-2 border-rose-600 rounded" type="submit"> -->
 </form>
 <!-- {countryname} -->

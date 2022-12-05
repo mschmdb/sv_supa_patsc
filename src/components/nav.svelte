@@ -6,6 +6,8 @@
     &nbsp;|&nbsp
     <a href="/map" class="underline" data-sveltekit-prefetch>graph with D9</a>
     &nbsp;|&nbsp
-    <a href="/daisygraph" class="underline" data-sveltekit-prefetch>daisygraph</a>
+    <a href="/daisygraph" class="underline" data-sveltekit-prefetch>range</a>
+    &nbsp;|&nbsp
+    <a href="/datatable" class="underline" data-sveltekit-prefetch>datatable</a>
 </div>
 </nav>
